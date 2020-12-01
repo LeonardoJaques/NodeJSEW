@@ -7,7 +7,7 @@ CREATE TABLE TB_HEROIS (
 
 )
 --create
-INSERT INTO TB_HEROIS ( NOME, PODER )
+INSERT INTO TB_HEROIS ( NOME , PODER )
 VALUES
     ( 'Flash', 'Velocidade' ),
     ( 'Aquaman', 'Falar com os animais aquaticos' ),
