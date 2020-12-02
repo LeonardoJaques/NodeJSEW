@@ -25,7 +25,7 @@ class MongoDB extends ICrud {
   }
 
   defineModel() {
-    heroisSchema = new Mongoose.Schema({
+    const heroisSchema = new Mongoose.Schema({
       nome: {
         type: String,
         required: true,
@@ -58,14 +58,23 @@ class MongoDB extends ICrud {
     const connection = Mongoose.connection;
     this._driver = connection;
     connection.once('open', () => console.log('Database rodando.'));
+    this.defineModel();
   }
 
-  async create(item) {
-    const resultCadastrar = await model.create({
-      nome: 'Batman',
-      poder: 'dinheiro',
-    });
-    console.log('Result Cadastrar', resultCadastrar);
+  create(item) {
+    return this._herois.create(item);
+  }
+
+  read(item, skip = 0, limit = 10) {
+    return this._herois.find(item).limit(limit).skip(skip);
+  }
+
+  update(id, item) {
+    return this._herois.updateOne({ _id: id }, { $set: item });
+  }
+
+  delete(id) {
+    return this._herois.deleteOne({ _id: id });
   }
 }
 
