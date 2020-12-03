@@ -1,0 +1,23 @@
+{
+  "name": "07-mult-db",
+  "version": "1.0.0",
+  "description": "-> docker pull postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/tests/*.js",
+    "test:watch": "mocha src/tests/*.js -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.3",
+    "mongoose": "^5.11.0",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
