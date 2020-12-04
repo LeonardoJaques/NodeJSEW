@@ -22,8 +22,6 @@ class HeroRoutes extends BaseRoute {
 
           if (isNaN(limit)) throw Error('O tipo de Limit é incorreto');
 
-          
-
           return this.db.read(query, parseInt(skip), parseInt(limit));
         } catch (error) {
           console.log('Deu Rum!!!', error);
